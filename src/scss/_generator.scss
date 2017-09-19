@@ -1,0 +1,9 @@
+@each $type, $config in $ZFS_FONT_SIZE_MAP {
+    .#{$zfs-prefixe}-#{$type} {
+        @if type-of($config) == 'map' {
+            @include poly-fluid-sizing($config); 
+        } @else {
+            font-size: $config;
+        }
+    }
+}

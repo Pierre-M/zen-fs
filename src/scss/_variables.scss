@@ -1,0 +1,32 @@
+/// CONFIG
+$zfs-prefixe: zfs;
+
+/// Font size reference
+$zfs-main: 14px !default;
+
+/// Font sizes based on font size ref
+$zfs-small: round($zfs-main*.8571); //12px
+$zfs-big: round($zfs-main*1.8571); //26px
+$zfs-large: round($zfs-main*2.5714); //36px
+$zfs-huge: round($zfs-main*4.5714); //64px
+
+$zfs_bp-default: 1440px;
+$zfs_bp-mdmax: 1200px;
+$zfs_bp-xxsmin: 480px;
+
+$ZFS_FONT_SIZE_MAP: (
+	main: $zfs-main,
+	small: $zfs-small,
+	big: (
+		$zfs_bp-default: $zfs-big,
+		$zfs_bp-xxsmin: $zfs-big*.7
+	),
+	large: (
+		$zfs_bp-default: $zfs-large,
+		$zfs_bp-xxsmin: $zfs-big
+	),
+	huge: (
+		$zfs_bp-default: $zfs-huge,
+		$zfs_bp-xxsmin: $zfs-large
+	)
+);

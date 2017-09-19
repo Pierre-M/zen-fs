@@ -1,0 +1,32 @@
+.zfs-main {
+  font-size: 14px; }
+
+.zfs-small {
+  font-size: 12px; }
+
+.zfs-big {
+  font-size: 18.2px; }
+  @media (min-width: 480px) {
+    .zfs-big {
+      font-size: calc(0.8125vw + 14.3px); } }
+  @media (min-width: 1440px) {
+    .zfs-big {
+      font-size: 26px; } }
+
+.zfs-large {
+  font-size: 26px; }
+  @media (min-width: 480px) {
+    .zfs-large {
+      font-size: calc(1.04167vw + 21px); } }
+  @media (min-width: 1440px) {
+    .zfs-large {
+      font-size: 36px; } }
+
+.zfs-huge {
+  font-size: 36px; }
+  @media (min-width: 480px) {
+    .zfs-huge {
+      font-size: calc(2.91667vw + 22px); } }
+  @media (min-width: 1440px) {
+    .zfs-huge {
+      font-size: 64px; } }

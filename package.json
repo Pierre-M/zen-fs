@@ -1,0 +1,16 @@
+{
+  "name": "zen-fs",
+  "version": "0.1",
+  "description": "Fluid typo sizing for beautiful responsive design",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass --include-path scss src/scss/zen-fs.scss dist/css/zen-fs.css",
+    "watch": "nodemon -e scss -x \"npm run build\""
+  },
+  "author": "Pierre-M",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1"
+  }
+}
