@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+## Zen-fs ? Quesaco ?
 
-You can use the [editor on GitHub](https://github.com/Pierre-M/zen-fs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Zen-fs est un générateur de font-sizes responsives sous **sass**, basé sur cet [excellent article](https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/) de [Jake Wilson](https://github.com/Jakobud) et son mixin **poly-fluid-sizing**.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Fonctionnement
 
-### Markdown
+**Zen-fs** contient de base 5 font-sizes responsive : 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+|name | value |
+|----|----|
+|**main**| 14px|
+|small|12px|
+|big|26px|
+|large|36px|
+|huge|64px|
 
-```markdown
-Syntax highlighted code block
+Chaque taille étant calculée par rapport à la taille **main**.
 
-# Header 1
-## Header 2
-### Header 3
+A chacune de ses tailles est associée une **map** de la forme :
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```sass
+(
+  $breakpoint: $font-size,
+  $breakpoint: $font-size,
+  $breakpoint: $font-size
+  ...
+);
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+C'est cette map qui permet de déterminer le comportement responsive de la font-size ciblée.
 
-### Jekyll Themes
+/!\ Les breakpoints sont ensuite utilisés dans une media-query de type *min-width*.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Pierre-M/zen-fs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Générateur
 
-### Support or Contact
+Comme énoncé plus haut, Zen-fs est un générateur. Il expose :
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* les classes utilitaires correspondant aux font-sizes
+* les classes silencieuse permettant d'appliquer un comportement responsive à un selecteur en particulier (en utilisant un **@extend**)
+
+## Variables
+
+| name | desc | default |
+|---|---|----|
+|$zfs-prefixe| détermine le préfixe ajouté en début de classe et de classe silencieuse | zfs |
+| $zfs-main | taille de font de reference | 14px
+
+
+
